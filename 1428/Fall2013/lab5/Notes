@@ -1,0 +1,13 @@
+Discuss quiz:
+	take home fresh copy, redo, will average the two
+	briefly review relevant concepts (debug example, file input)
+Lecture notes:
+	logic/truth tables for AND, OR and NOT
+	switch
+		syntax, idention, spacing, default
+		switch variable must be int/char
+		fall through
+		break
+	formatting (iomanip, not /t)
+		setw(20)
+

@@ -1,0 +1,27 @@
+literals versus variables versus constants
+	variable - memory address, value can change
+	constant - memory address, value cannot change
+	literal - no memory address, value is whatever it is
+	string literal - "this is a string literal"
+	review datatypes
+common errors:
+	typo
+	forget the semicolon
+	only declare once!
+		review declaration/initialization/usage
+debugging:
+	what we do when original program has mistakes
+		examine error messages
+			missing semicolon before...
+		*change ONE thing at a time*
+		insert cout statements to examine variables
+		use debugger (advanced)
+	step through debugging program test.cpp
+		namepspace std
+		period instead of comma
+		semicolon after cout
+		area calculation is incorrect
+Also:
+	upload ONLY the program you write (not the debugged ones)
+	correct naming of the file
+	correct header

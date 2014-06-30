@@ -1,0 +1,22 @@
+Due on 10/16, submit in hard copy
+
+Chapter 6
+1. (15%)
+4. (10%)
+5. (15%)
+6. (10%)
+9. (10%)
+20. (10%) Give an example to show how the performance could be affected.
+
+Addtional questions:
+
+i) (15%) Assume a CPU has pins connected to a AD7304 chip. The CPU will send 0x7D to the channel C of the chip.
+a) What is in the data frame, i.e. SA SI A1 A0 D7 D6 D5 D4 D3 D2 D1 D0?
+b) What is the timing diagram for this transmission?
+
+ii) (15%) Assume two devices are using UART for communication. The sending device has a clock of 9600Hz, and sends data at 9600bps.
+The receiving device has a clock of 200KHz, and uses a counter to generate a slower clock for receiving data. For example, the device lets the counter count from 0 to 9 periodically. Then, the device generates a clock of 20KHz.
+Assume the counter must be a multiple of 16 due to the design inside the hardware. Hence, the receiving device can only generate a receiving clock close to 9600Hz.
+a) Assume the receiving clock is faster than 9600Hz. What is the maximum frame size (including all start and stop bits)?
+b) Assume the receiving clock is slower than 9600Hz. What is the maximum frame size (including all start and stop bits)?
+

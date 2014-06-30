@@ -1,0 +1,7 @@
+To Compile : make micaz
+To Run     : make micaz reinstall.1 mib510,/dev/ttyUSB0
+
+This application displays the use of timers. Each timer is being called after every 250 , 500, 1000 milli seconds.
+If observed closely, we can watch a sequence of binary numbers form 0 to 7 being generated.
+
+

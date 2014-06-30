@@ -1,0 +1,28 @@
+Due on 9/18, submit in hard copy
+
+Besides answering the questions given in the textbook, please provide extra information per request.
+
+Chapter 1
+	5. (10%)
+	9. (10%)
+	15. (15%)
+
+Chapter 2
+	2. (15%) For each market-specific standard example, give a short summary (no more than 10 lines) of its target market. You can search online.
+	7. (15%) Give an example of cross-compiler, compiler and assembler.
+	16. (15%)
+
+Additional question:
+
+i) (20%) Install the cross compiler and the corresponding libraries and utility tools. Compile the hello program below to avr and x86.
+a) Show the commands of the two compilation.
+b) Use the command "objdump -D -S hello.x86 > hello.x86.asm" to get the assembly of the x86 program. Locate, copy and paste the x86 assembly code of the main() function only.
+c) Use the command "avr-objdump -D -S hello.avr > hello.avr.asm" to get the assembly of the avr program. Locate, copy and paste the avr assembly code of the main() function only.
+d) Discuss the purpose of the puts() function, and the reason why you can locate the avr code of the puts() function but not the x86 code.
+
+// ==== copy and paste the code below into a file hello.c ====
+#include <stdio.h>
+int main() {
+  printf("hello world!\n");
+}
+

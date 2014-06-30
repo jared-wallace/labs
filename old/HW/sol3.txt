@@ -1,0 +1,89 @@
+For your reference only! For HW3
+
+Chapter 6
+
+1. (15%)
+[a] Input/Output (I/O) components on a board are responsible for getting information
+into and/or out of the board to I/O devices connected to an embedded system. Board I/O
+can either be input components that only bring information from an input device to the
+master processor, output components that get information out of the master processor to
+an output device, or components that do both
+
+[b] i.e., networking and communications (the physical layer of the OSI model) I/O, input
+(keyboard, mouse, remote control, vocal, etc.), graphics and output I/O (touch screen,
+CRT, printers, LEDs, etc.), storage I/O (optical disk controllers, magnetic disk
+controllers, magnetic tape controllers, etc.), debugging I/O (BDM, JTAG, serial port,
+parallel port, etc.), real time and miscellaneous I/O (timers/counters, ADCs (analog-todigital
+converters) and DACs (digital-to-analog converters), key switches, and so on)
+
+4. (10%)
+[a] Serial I/O can transmit and receive serial data is made up of components in which
+data is stored, transferred and/or received one bit at a time. Components that transmit
+data in parallel are devices that allow data to be transferred in multiple bits
+simultaneously.
+
+[b] i.e., serial (RS-232), Parallel (SCSI)
+
+5. (15%)
+[a] Serial I/O data communication that occurs via a simplex scheme is one in which a
+data stream can only be transmitted, and thus received, in one direction. A half duplex
+scheme is one in which a data stream can be transmitted and received in either direction,
+but in only one direction at any one time. A full duplex scheme is one in which a data
+stream can be transmitted and received in either direction simultaneously
+
+[b] Figure 2-10a (half duplex), Figure 2-10b (simplex ), Figure 2-10c (full duplex)
+
+6. (10%)
+[a] Serial I/O transfers that occurs intermittently at irregular (random) intervals
+
+[b] In an asynchronous transfer, the data being transmitted is typically stored and modified
+within a serial interface's transmission buffer. Basically, the serial interface at the
+transmitter divides the data stream into groups, called packets, that typically range from
+either 4 to 8 bits per character or 5 to 9 bits per character. Each of these packets are then
+encapsulated in frames to be transmitted separately. The frames are modified packets
+(before transmission) by the serial interface to include a START bit at the start of the
+stream, and a STOP bit or bits (i.e. can be 1, 1.5, or 2 bits in length to ensure a transition
+from "1" to "0" for the START bit of the next frame) at the end of the data stream being
+transmitted. Within the frame, after the data bits and before the STOP bit, a parity bit
+may also be appended. A START bit indicates the start of a frame, the STOP bit (s)
+indicates the end of a frame, and the parity is an optional bit used for very basic error
+checking. Basically, parity for a serial transmission can be NONE (for no parity bit and
+thus no error checking), EVEN (where the total number of bits set to "1" in the
+transmitted stream, excluding the START and STOP bits, needs to be an even number
+for the transmission to be a success), and ODD (where the total number of bits set to "1"
+in the transmitted stream, excluding the START and STOP bits, needs to be an odd
+number for the transmission to be a success).
+
+9. (10%)
+[a] Serial I/O transfers that occurs as a steady (continuous) stream at regular intervals
+regulated by the CPU's clock
+
+[b] In a synchronous transmission, there are no START or STOP bits appended to the data
+stream, and there is no idle period. As with asynchronous transmissions, the data rates for
+receiving and transmitting must be in sync. However, unlike the separate clocks used in
+an asynchronous transfer, the devices involved in a synchronous transmission are
+synchronizing off of one common clock which does not start and stop with each new
+frame (and on some boards there may be an entirely separate clock line for the serial
+interface to coordinate the transfer of bits). In some synchronous serial interfaces, if
+there is no separate clock line, the clock signal may even be transmitted along with the
+data bits.
+
+20. (10%)
+By bottlenecking the entire system.
+
+Addtional questions:
+
+i) (15%)
+a) SA SI A1 A0 D7 D6 D5 D4 D3 D2 D1 D0
+    1  1  1  0  0  1  1  1  1  1  0  1
+
+b) The timing diagram is in Figure 4 of the chip manual.
+
+ii) (15%)
+
+Because the counter must be a multiple of 16.
+
+a) If the counter is 16, the receiving clock is 12.5KHz. The max frame size is 9.6/(12.5-9.6) = 3.3 bits
+
+b) If the counter is 32, the receiving clock is 6.25KHz. The max fram size is 9.6/(9.6-6.25) = 2.9bits
+

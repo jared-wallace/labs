@@ -1,0 +1,14 @@
+When to use for loop
+   when the number of times through the loop is both known and consistent
+Basic structure
+   declaring/initializing index variable
+   setting limit (conditional)
+   step (positive, negative, can be more than 1)
+Common pitfalls
+   never reaching the limit (infinite loop)
+   off by one errors
+To keep in mind
+   take advantage of the loop indexes inside the loop
+      (not just a way to mark time)
+
+

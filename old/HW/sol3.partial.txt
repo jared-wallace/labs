@@ -1,0 +1,18 @@
+For your reference only! For HW3
+
+Addtional questions:
+
+i) (15%)
+a) SA SI A1 A0 D7 D6 D5 D4 D3 D2 D1 D0
+    1  1  1  0  0  1  1  1  1  1  0  1
+
+b) The timing diagram is in Figure 4 of the chip manual.
+
+ii) (15%)
+
+Because the counter must be a multiple of 16.
+
+a) If the counter is 16, the receiving clock is 12.5KHz. The max frame size is 9.6/(12.5-9.6) = 3.3 bits (or 23 bits)
+
+b) If the counter is 32, the receiving clock is 6.25KHz. The max fram size is 9.6/(9.6-6.25) = 2.9bits (or 125 bits)
+

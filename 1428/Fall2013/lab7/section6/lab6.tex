@@ -1,0 +1,111 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{courier}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[width=4in]{caption}
+\usepackage{hyphenat}
+
+% Format a sectionless paragraph
+\newcommand*\unparagraph{
+	\par
+	\nopagebreak
+	\vskip3.25ex plus1ex minus.2ex
+	\noindent
+}
+
+% define extra colors
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{purple}{RGB}{159,0,197}
+
+% define the code listing format
+\lstset{
+	language=C++,
+	basicstyle=\ttfamily,
+	backgroundcolor=\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	%frame=single,
+	tabsize=3,
+	keywordstyle=\color{purple},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{blue},
+	escapeinside={\%*}{*)}
+}
+
+% define the title/header
+\title{\Large CS 1428\\Lab 6 Section 19} 
+\author{Jared Wallace}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Topic}
+Today we are discussing the \lstinline$while$ loop and the \lstinline$do while$ loop. These two loops have very similar 
+behavior with the only difference being that the \lstinline$do while$ loop will always execute once before
+checking its condition.
+
+% code example here
+\unparagraph{}
+\begin{lstlisting}[basicstyle=\footnotesize\ttfamily]
+/*
+ * Two different examples using while loops to check user input.
+ * Each is subtly different
+ */
+
+
+ // First example
+cout << "Please pick a number between 1 and 10: ";
+cin >> theNumber;
+
+while (theNumber < 1 || 10 < theNumber) {
+	cout << theNumber << " is not between 1 and 10, try again.\n";
+	cout << "Please pick a number between 1 and 10: ";
+	cin >> theNumber;
+}
+
+// Second example
+do {
+	cout << "Please enter a number between 1 and 10: ";
+	cin >> theNumber;
+	cout << endl;
+} while (theNumber < 1 || 10 < theNumber);
+
+\end{lstlisting}
+
+\newpage
+
+\section*{Programming Task}
+You will write a program that prompts the user to enter several grades.  As long
+as the grades entered are valid (0 $\leq$ grade $\leq$ 100) the user will be able to continue
+entering more grades. Once grade entry is complete the average should be calculated
+and displayed.  Then the user is offered a choice to enter another set of grades 
+or exit the program.
+
+You will probably want two loops, one to handle the overall program, and one to handle 
+getting grades. It will be necessary to keep track of the number of grades entered as well.
+
+
+Be sure to prompt the user where appropriate, always assume the user does not know
+the purpose of the program.
+
+\vspace{15mm}
+
+% Don't forget the submission instructions!
+\unparagraph{} \textbf{Print out your source code and staple to the back of this page.  Also
+upload your source file through the homework upload utility.}
+
+\vspace{45mm}
+
+% Comic at the bottom
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=6in]{new_car.png}
+\end{figure}
+
+\end{document}

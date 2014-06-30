@@ -1,0 +1,35 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[margin=0.75in]{geometry}
+
+\title{\Large CS 1428\\Lab 2 Section 6 and 19} 
+\author{Jared Wallace}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Review Topics}
+\begin{itemize}
+\item console input/output (I/O)
+	\item expression evaluation
+	\item arithmetic operators
+	\item shorthand operators
+	\end{itemize}
+
+	\section*{Part 1: Write a program}
+	The quadratic formula is as follows:
+	\begin{equation}
+	\frac{-b\pm \sqrt{b^2 - 4ac} }{2a}
+	\end{equation}
+
+	\begin{itemize}
+			\item Prompt the user for the values of $a$, $b$, and $c$ determine what possible solutions for x.  
+				Note: you will need to calculate two (2) values because of the $\pm$.  
+			\item You will need to use the \textbf{sqrt()} function which is available in the \textbf{\textless math.h\textgreater} library.  
+			\item In the case where the values of $a$, $b$ and $c$ result in a negative under the root you should get \textbf{nan} as the result of your calculations.  This signifies \textbf{not a number} which occurs when you try to take the root of a negative, divide by zero or some other operation that is undefined in mathematics. To avoid complicating the assignment any further we will not check for \textbf{nan} and discard it, instead we will print it as if it is a valid answer and expect the hypothetical \emph{user} to know well enough to ignore it.
+	\end{itemize}
+
+	\end{document}

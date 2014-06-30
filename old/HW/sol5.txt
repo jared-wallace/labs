@@ -1,0 +1,106 @@
+Due on 11/11, submit in hard copy
+
+Chapter 8
+
+3. (10%)
+[a] A device driver that is architecture-specific means that it enables the hardware that is
+integrated into a master processor (the architecture). A device driver that is generic
+means that it manages hardware that is located on the board and not integrated onto the
+master processor.
+
+[b] Examples of architecture-specific drivers that initialize and enable components
+within a master processor include on- chip memory, integrated memory managers
+(MMUs), and floating point hardware. Generic drivers include code that initializes and
+manages access to the remaining major components of the board, including board buses
+(I2C, PCI, PCMCIA, ...), off-chip memory (controllers, level-2+ cache, Flash,…), and
+off-chip I/O (Ethernet, RS-232, display, mouse, etc.).
+
+4. (10%)
+RS232 COM (UART), RS485/RS232 HDLC, LCD, CAN, Ethernet,
+Memory (Flash, EEPROM, SDRAM...), Interrupt, Timers, IR, LED/Switches,...
+
+5. (15%)
+1) Hardware Startup, initialization of the hardware upon power-on or reset.
+2) Hardware Shutdown, configuring hardware into its power-off state. 3) Hardware
+Disable, allowing other software to disable hardware on-the-fly. 4) Hardware Enable,
+allowing other software to enable hardware on-the-fly. 5) Hardware Acquire, allowing
+other software gain singular (locking) access to hardware.
+
+10. (15%)
+[a] software , internal hardware, and external hardware
+
+[b] Software interrupts are interrupts that are explicitly triggered internally by some
+instruction within the current instruction stream being executed by the master processor.
+Internal hardware interrupts, on the other hand, are interrupts that are initiated by an
+event that is a result of a problem with the current instruction stream that is being
+executed by the master processor because of the features (or limitations) of the hardware,
+such as illegal math operations (overflow, divide-by-zero), debugging (single-stepping,
+breakpoints), invalid instructions (opcodes), and so on. External hardware interrupts are
+interrupts initiated by hardware other then the master CPU (i.e. board buses and I/O for
+instance).
+
+14. (10%)
+An interrupt-vectored scheme is where external device triggering an interrupt
+can provide an interrupt vector, a place in memory which holds the address of an
+interrupt's ISR. For devices that cannot provide an interrupt vector (referred to as nonvectored
+interrupts), master processors implement an auto-vectored interrupt scheme in
+which one ISR is shared by the non-vectored interrupts, and determining which specific
+interrupt to handle, interrupt acknowledgment, etc., is all done via the ISR software.
+
+18. (10%)
+1) I/O Startup, initialization of the I/O upon power-on or reset. 2)I/O
+Shutdown, configuring I/O into its power-off state. 3)I/O Disable, allowing other
+software to disable I/O on-the-fly. 4) I/O Enable, allowing other software to enable I/O
+on-the-fly......
+
+Additioinal question:
+
+i.
+a) (9%)
+foo:
+push r0
+in r0, SREG
+movw r12, r4
+movw r14, r6
+add r12, r8
+adc r13, r9
+adc r14, r10
+adc r15, r11
+out SREG, r0
+pop r0
+ret
+
+b) (6%)
+; assume A and B are in the registers already
+call foo
+movw r4, r12
+movw r6, r14
+
+ii. 
+a) (3%)
+; clear status and disable interrupt
+eor	r1, r1
+out	SREG, r1
+
+b) (3%)
+; initialize SP
+ldi r17, high(RAMEND)
+out SPH, r17
+ldi r16, low(RAMEND)
+out SPL, r16
+
+c) (9%)
+; clear ram
+eor	r1, r1
+ldi	r16, 0x00	; ending address is 0x1100
+ldi	r17, 0x11
+ldi	r26, 0x00	; starting address is 0x0100
+ldi	r27, 0x01
+rjmp	clear_bss_start
+clear_bss_loop:
+st	X+, r1
+clear_bss_start:
+cp	r26, r16
+cpc	r27, r17
+brne	clear_bss_loop
+

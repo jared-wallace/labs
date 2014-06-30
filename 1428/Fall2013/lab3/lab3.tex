@@ -1,0 +1,99 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{graphicx}
+\lstset {
+	language=[GNU]C++,
+	showstringspaces=false,
+	tabsize=2,
+	basicstyle=\scriptsize,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=false,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        numbers=left,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+}	
+
+\title{\Large CS 1428\\Lab 1 Sections 19 and 06} 
+\author{Jared Wallace}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Topic}
+Today we're covering file input and output.  The two objects we use
+for file input and output are \textbf{ifstream} (for input files) and 
+\textbf{ofstream} (for output files). For either object you must open 
+a file before it can be used.  After opening a file you \textbf{MUST} 
+check that the file was opened succesfully.  If you do not check for a
+successful open and the open did fail then your program will most 
+likely not crash.  Instead the program will run but behave strangely. 
+We read in from and write out to our files using the insertion 
+(\textbf{\textless\textless}) and extraction (\textbf{\textgreater\textgreater}) operators just like we do 
+with \textbf{cin} and \textbf{cout}.
+
+For example:
+
+\begin{lstlisting}
+int myInt;
+ifstream fin;
+
+fin.open("myfile.txt");
+if (!fin) 
+{
+   cout << "Failed to open the file.\n":
+   return 0;
+}
+
+fin >> myInt;
+cout << "The integer is " << myInt << endl;
+\end{lstlisting}
+
+\section*{Part 1: Getting input from a file}
+The provided input file \emph{input.txt} contains 3 grades each for 3
+people for a total of 9 grades.  I want you to read in the grades for 
+each person, calculate the average for each person and calculate the 
+average for the whole "class".  After these calculations are complete 
+I want you to print the results to the screen in a format that is 
+readable.
+
+I have provided you with a starter file \emph{input.cpp} which
+contains the basic structure for your program and includes all
+the libraries that you should need. Rename your copy \emph{input\_(netid).cpp}.
+
+\newpage
+\section*{Part 2: Printing output to a file}
+Create your own program named \emph{output\_(netid).cpp} which will send
+its output to the file \emph{output.txt}. I would like you to print
+out several things.
+\begin{itemize}
+   \item Your name
+   \item The lab section (C.S.1428.L0\#)
+   \item Todays date
+   \item Today's lab number
+   \item A description of what we learned today.
+\end{itemize}
+
+The output should be neatly formatted, labeled and clear enough
+that any random person reading it can tell what you're trying to
+say.
+
+When you are finished you must upload both source files (both input\_(netid).cpp and output\_(netid).cpp)
+through the homework upload utility and print out a copy of each.
+Staple this page to the front of those as a cover sheet, write your
+name at the top and place it on my desk before leaving.
+\section*{}
+\includegraphics[width=7in]{cant_sleep.png}
+
+\end{document}
+

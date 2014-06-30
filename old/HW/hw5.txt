@@ -1,0 +1,21 @@
+Due on 11/13, submit in hard copy
+
+Chapter 8
+3. (10%)
+****4. (10%)
+5. (15%)
+10. (15%)
+14. (10%)
+18. (10%)
+
+Additioinal question:
+
+i) (15%) In ATmega128, assume a 32-bit integer A is stored in r4-r7, and another 32-bit integer B is stored in r8-r11.
+a) Make an AVR function that implements "C=A+B". The function stores the return in r12-r15.
+b) Make an AVR program that implements "A+=B". The program shall call the function "C=A+B" for the computation.
+
+ii) (15%) The MICAz mote has 4352-Byte data ram. Make an AVR function to clean the data memory. The function should complete the following steps.
+a) Clean the SREG register
+b) Set the stack pointer to the bottom of the data ram.
+c) Clear the whole data ram to 0.
+

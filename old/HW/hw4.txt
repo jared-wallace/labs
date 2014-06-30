@@ -1,0 +1,33 @@
+Due on 10/30, submit in hard copy
+
+Chapter 4
+1. (15%)
+2. (15%) (a) (b)
+6. (15%)
+10 (10%)
+14. (10%)
+
+Additioinal question:
+
+i) (20%)
+a) Draw the layout of data memory space in ATmega128 (i.e. general registers, io registers, data)
+b) Find the memory address and the io address (if available) for the following special registers.
+   * IO registers for port A: PORTA, DDRA, PINA
+   * Stack pointer registers: SPH, SPL
+   * Status register: SREG
+   * MCU control register: MCUCR
+   * Interrup control and status registers: EIMSK, EIFR
+   * USART0 registers: UDR0, UCSR0A, UCSR0B, UCSR0C, UBRR0H, UBRR0L
+
+ii) (15%) Dynamic Voltage Scaling (DVS) is a technique to control energy consumption of a processor.
+   It is based on the two equations below, where v is the volatage supplied to the processor, p is the power consumption, f is the scaled processor frequency. Assume C = 2.75 W/V2, F = 3.8GHz, and K = 1.563V
+
+   p = C * v^2
+   f = F * (1 - K/v)
+
+   Assume the process can execute 1 instruction per 2 clocks. If a task needs to execute 1000 instructions. 
+
+a) If v is 3V, what is p and f? What is the total energy consumed by the task?
+b) If v is 2V, what is p and f? What is the total energy consumed by the task?
+
+Note: the total consumed energy is the multiplication of p and the time for exeucting the task.

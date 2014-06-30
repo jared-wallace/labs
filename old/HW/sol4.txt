@@ -1,0 +1,55 @@
+For your reference only! For HW4
+
+Chapter 4
+1. (15%)
+[a] The features that are built into an architecture’s instruction set are commonly referred
+to as the Instruction Set Architecture(ISA).
+
+[b] ISAs typically define such features as the operations that can be used by
+programmers to create programs for that architecture, the operands [data] that are
+accepted and processed by an architecture, operand storage, addressing modes used to
+gain access to and process operands, and the handling of interrupts.
+
+2. (15%)
+[a] The most commonly implemented ISA models are application-specific (typically
+define processors that are intended for specific embedded applications), general purpose
+(typically implemented in processors that are targeted to be used in a wide variety of
+embedded systems, rather than in specific types of embedded systems and only those
+types of systems), and instruction-level parallel (similar to general-purpose ISAs, except
+that they execute multiple instructions in parallel).
+
+[b] application-specific : JVM (aj100,...), FSMD(ASICS, PLDs, ...), Datapath (DSPs,...)
+general purpose : CISC (x86, 68K,...), RISC (PPC, MIPS,...)
+instruction-level parallel : SIMD (oti4110,...), Superscaler(tricore), VLIW(TL1100,....)
+
+6. (15%)
+the Arithmetic Logic Unit (ALU), registers, the Control Unit (CU), and the
+internal CPU buses
+
+10 (10%)
+The memory hierarchy is a collection of different types of memory, each with unique
+speeds, sizes, and usages. Some of this memory can be physically integrated on the
+processor, such as registers, Read-Only Memory (ROM), certain types of Random
+Access Memory (RAM), and level-1 cache. While level-2+ cache, other types of main
+and secondary memory are located on the board.
+
+14. (10%)
+MMUs and memory controllers
+
+Additioinal question:
+
+i) (20%)
+a) Figure 9 on page 20 of the ATMega128's manual.
+
+b) IO_address(mem_address)
+   * PORTA: 0x1B(0x3B), DDRA: 0x1A(0x3A), PINA: 0x19(0x39)
+   * SPH: 0x3E(0x5E), SPL: 0x3D(0x5D)
+   * SREG: 0x3F(0x5F)
+   * MCUCR: 0x35(0x55)
+   * EIMSK: 0x39(0x59), EIFR: 0x38(0x58)
+   * UDR0: 0x0C(0x2C), UCSR0A: 0x0B(0x2B), UCSR0B: 0x0A(0x2A), UCSR0C :(0x95), UBRR0H: (0x90), UBRR0L: 0x09(0x29)
+
+ii) (15%)
+a) v=3V, p=24.75W and f=1.82GHz and E=27.2uJ.
+
+b) v=2V, p=11W and f=0.83GHz and E=26.5uJ.

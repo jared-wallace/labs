@@ -1,0 +1,80 @@
+For your reference only! For HW1
+
+Chapter 1
+
+5. (10%)
+
+i) The big-bang model, where there is little or no planning or processes in place before and during the development of a system.
+
+ii) The code-and-fix model, where product requirements are defined but no formal processes are in place before the start of development.
+
+iii) The waterfall model, where there is a process of developing a system in steps, and where results of one step flow into the next step.
+
+iv) The spiral model, where there is a process of developing a system in steps, and throughout the various steps feedback is obtained and incorporated back into the process.
+
+9. (15%)
+
+An abstraction of the embedded device, meaning it is a generalization of the embedded system that typically doesn’t show detailed implementation details such as software source code or the detailed hardware circuit design.
+
+15. (15%)
+
+[a] The primary architectural tool used in the text to introduce the major elements located within an embedded system.
+
+[b] A layered (modular) representation of an embedded systems architecture from which a modular architectural structure can be derived.
+
+[c] The hardware layer contains all the major physical components located on an embedded board, whereas the system and application software layers contain all of the software located on and being processed by the embedded system.
+
+[d] Two main reasons : i) The visual representation of the main elements and their associated functions. ii). Modular architectural representations are typically the structures leveraged to structure the entire embedded project.
+
+Chapter 2
+
+2. (15%)
+
+Follow the example in the textbook
+
+7. (15%)
+
+[a] A compiler generally generates some target language from the source language. Cross-compilers are a type of compiler located on the programmer’s host machine, and that generate machine code for hardware platforms that differ from the platform the compiler is actually running on.
+
+[b] A compiler generally generates some target language from the source language. An assembler is a program that translates assembly code into machine code.
+
+Example:
+cross-compiler: avr-gcc
+compiler: gcc
+assembler: avr-as
+
+16. (15%)
+
+[a] An element supported by Microsoft that allows applications written in almost any high-level programming language (such as C#, Visual Basic, Javascript, etc.) to run on any embedded device, independent of their hardware or system software design.
+
+[b] (essentially anything mentioned in text) i.e., allows for platform-independent application code, implements a GC, and an execution unit to translate code.
+
+[c] (essentially anything mentioned in text) i.e., currently implements a generational GC scheme, and only implemented in system software.
+
+i) (20%)
+
+a) gcc -o hello.x86 hello.c
+   avr-gcc -mmcu=atmega128 -o hello.avr hello.c
+
+b) 00000000004004c4 <main>:
+  4004c4:	55                   	push   %rbp
+  4004c5:	48 89 e5             	mov    %rsp,%rbp
+  4004c8:	bf d8 05 40 00       	mov    $0x4005d8,%edi
+  4004cd:	e8 ee fe ff ff       	callq  4003c0 <puts@plt>
+  4004d2:	5d                   	pop    %rbp
+  4004d3:	c3                   	retq   
+
+c) 000000ce <main>:
+  ce:	cf 93       	push	r28
+  d0:	df 93       	push	r29
+  d2:	cd b7       	in	r28, 0x3d	; 61
+  d4:	de b7       	in	r29, 0x3e	; 62
+  d6:	80 e0       	ldi	r24, 0x00	; 0
+  d8:	91 e0       	ldi	r25, 0x01	; 1
+  da:	0e 94 72 00 	call	0xe4	; 0xe4 <puts>
+  de:	df 91       	pop	r29
+  e0:	cf 91       	pop	r28
+  e2:	08 95       	ret
+
+d) puts() is to print the string.
+   Because the avr program is in fact a complete system, it includes the bootloader, the libraries (e.g. puts), and the application (e.g. main). But, the x86 program is just an application. It does not need to include any shared libraries in the computer system.

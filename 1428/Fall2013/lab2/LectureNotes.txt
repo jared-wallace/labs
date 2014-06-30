@@ -1,0 +1,25 @@
+Review:
+	proper header
+	upload and proper naming
+Console IO:
+	cout(already seen) and cin
+	direction of operators
+	endl vs /n
+		endl flushes the buffer immediately
+		/n is faster (especially with file I/O)
+Expression Evaluation:
+	order of operations
+Arithmetic Operators:
+	usual plus modulus
+Shorthand Operators:
+	+=, *=, -=, /=, ++, --
+	postfix/prefix increment/decrement
+Using library functions:
+	sqrt()
+	if unsure, lookup
+Reliable Sources:
+	cplusplus.com
+	stackoverflow.com
+Verification/Testing:
+	testing with known values
+	edge cases

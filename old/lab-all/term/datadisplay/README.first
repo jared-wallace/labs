@@ -1,0 +1,26 @@
+==== Files ====
+
+sensor.h is the java source file defining the message structure for the communication between computer and base station.
+    Modify this file for various message structures.
+
+SenReader.java is the java source file managing the communication between computer and base station.
+    Modify this file for communication related issues, for example, communication ports.
+
+Makefile is the compliation file.
+    "make" to build
+    "make clean" to remove executables.
+
+==== Build ====
+
+Run "make" to build
+
+A few files will be generated.
+
+SenseMsg.java is the java source file generated from sensor.h.
+    Modify this file for logging and displaying.
+
+==== Execute ====
+
+Make sure that /dev/ttyUSB1 exists
+
+Run "java SenReader" to execute

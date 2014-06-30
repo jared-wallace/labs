@@ -1,0 +1,20 @@
+Quiz:
+1) B and D
+2) <iostream>
+3) C
+4) ifstream fin;
+   fin.open("...");
+5) 7 errors
+
+	() after main
+	" after successfully
+	remove semi-colon after "...all"
+	anInteger was not declared
+	missing semi-colon after "...<enter>"
+	stream operators are reversed on next to last line
+	no return statement
+
+Lecture:
+1) B
+2) firstInt != secondInt
+3) 14

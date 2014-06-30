@@ -1,0 +1,6 @@
+AuthUserFile /home/LabStaff/jaredw/public_html/lab_files/lab11/.htpasswd
+AuthGroupFile /dev/null
+AuthName EnterPassword
+AuthType Basic
+
+require valid-user

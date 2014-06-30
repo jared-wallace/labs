@@ -1,0 +1,15 @@
+Follow the following steps to read the high level data via the serial port from a sensor.
+
+1) Upload the executable into a sensor.
+
+2) Type the command below to read the raw data or from the serial port
+    "java net.tinyos.tools.Listen -comm serial@/dev/ttyUSB1:micaz"
+
+Follow the following steps to read the low level data via the serial port from a sensor.
+
+1) Type the command below to compile the serial program.
+    "gcc -o serial serial.c"
+
+2) Type the command below to read the raw data or from the serial port
+    "./serial /dev/com9 hdlc"
+

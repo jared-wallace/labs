@@ -1,0 +1,12 @@
+Collect quizzes
+While loops and do...while loops
+   work through examples
+      first checks for error condition
+         if none present, exits loop
+         can have input inside loop
+         error generates opportunity to fix
+         one time input validation
+      second only exits loop upon error
+         provides potentially infinite error checking
+      Point is, loops are versatile
+

@@ -1,0 +1,11 @@
+Review previous week's program
+   common mistakes (no () around 2a, subtraction not commutative
+   emphasize reading directions carefully
+File input/output
+   first time we need to verify something (file opened successfully)
+   using an if statement
+   same basic syntax as cin/cout
+Writing program in stages
+   sample file already compiles
+   do one section at a time
+   TEST, TEST, TEST

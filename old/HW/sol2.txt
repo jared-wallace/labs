@@ -1,0 +1,47 @@
+For your reference only! For HW2
+
+Chapter 3
+
+2.(a) (10%)
+
+The circuit components include a battery, a switch, a bulb (a resistor), and wire. The switch connects to the negative pole of the battery. Their symbols can be found in Appendix B.
+
+12. (15%)
+
+[a] LEDs are light emitting diodes that are the blinking or steady lights that can indicate anything from PowerON, to problems with the system, to remote-control signals, depending on how they are designed.
+
+[b] LEDs are designed to emit visible or infrared (IR) light when forward biased in a circuit.
+
+19. (15%)
+
+[a] Gates, along with the other electronic devices that can be located on a circuit, can be compacted to form a single chip, called an integrated circuit (IC).
+
+[b] SSI (small scale integration) containing up to 100 electronic components per chip, MSI (medium scale integration) containing between 100-3,000 electronic components per chip, LSI (large scale integration) containing 3000 – 100,000 electronic components per chip, VLSI (very large scale integration) containing between 100,000 – 1,000,000 electronic components per chip, ULSI (ultra large scale integration) containing over 1,000,000 electronic components per chip.
+
+20. (15%)
+
+For example, ARM7, MPC7410, Flash, MPC107 Bridge, Solano Interface IC, ...
+Use google to find more information of these chips.
+
+Additional questions: 
+
+i) (10%)
+
+(a) 1.24V
+
+(b) 40F
+
+ii) (10%)
+
+Let's have a base (-50) for temperature and a base (8000) for resistance.
+
+(a) The table stores 251 offset values for temperatures and 12000 offset values for resistance. So, at least 8 bits are needed for temperature and at least 14 bits are needed for resistance. So, at least 3 bytes are needed for each row.
+
+(b) The total memory of the table is 3x251=753 Bytes.
+
+iii) (10%)
+
+(a) Let x be the input and y be the output of V_OA. Then, set R_GA = 2KΩ, V_Ref = +5V.
+
+(b) According to Figure 1, G = 1 + 50 / R_GA = 26. Then, (y - V_Ref) = G * x. So, y = 5 + 26 * x.
+

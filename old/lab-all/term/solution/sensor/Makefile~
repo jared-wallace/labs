@@ -1,0 +1,3 @@
+SENSORBOARD = mda100
+COMPONENT = SensroApp
+include $(MAKERULES)
