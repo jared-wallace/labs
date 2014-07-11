@@ -56,11 +56,19 @@
 \section*{Tasks}
 \begin{enumerate}
 \item \textbf{Architecture and concepts of a sensor application}
+    All of our work will be done in nesC, which is just C with some extra features.
+    A nesC application consists of one or more \emph{Components} assembled, or \emph{wired},
+    to form an application executable. Components define two scopes: one for
+    their specification which contains the names of their \emph{interfaces},
+    and a second scope for their implementation. A component \emph{provides} and \emph{uses}
+    interfaces. The provided interfaces are intended to represent the
+    functionality that the component provides to its user in its specification;
+    the used interfaces represent the functionality the component needs to
+    perform its job in its implementation.
 
-   A sensor application consists of \emph{components} and \emph{interfaces} in a hierarchy.
-   A component may be composed of several sub components that are wired (connected) via interfaces.
-   The component itself is wired to its sibling components via interfaces.
+    Interfaces are bidirectional: they specify a set of \emph{commands}, which are functions to be implemented by the interface's provider, and a set of events, which are functions to be implemented by the interface's user. For a component to call the commands in an interface, it must implement the events of that interface. A single component may use or provide multiple interfaces and multiple instances of the same interface.
 
+The set of interfaces which a component provides together with the set of interfaces that a component uses is considered that component's signature. 
    An interface provides the mechanism for a component to use functions in another component.
    \begin{itemize}
       \item An interface declares a set of functions (\emph{commands} and \emph{events}), but does not implement the functions, nor specify which component provides the interface.
