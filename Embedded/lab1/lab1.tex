@@ -63,8 +63,8 @@ equipment we will be using.
 \begin{enumerate}
    \item Inspect the sensor development kit
       \begin{itemize}
-         \item The development kit includes two MICAz \textbf{motes}, one MDA100 \textbf{sensor},
-            one MIB520 \textbf{programming board}, one USB cable, and one battery.
+          \item The development kit includes two Micaz \textbf{motes}, one MDA100 \textbf{sensor},
+            one MIB520 \textbf{programming board}, one USB cable, and several batteries.
                The development software has already been installed on the lab computer.
                \textit{This is a typical development kit for any embedded system.}
             \item The \textbf{mote} is the actual embedded system that communicates with
@@ -75,7 +75,7 @@ equipment we will be using.
          \item The programming board is responsible for loading executable application
                images onto the mote and for configuring the mote. The programming board
                also provides interfaces for debugging sensor applications and
-               gathering data in the mote.
+               gathering data from the mote.
          \item The USB cable connects the programming board with the computer.
                Sensor applications developed in the computer are transferred
                to the mote via the USB cable, through the programming board. The
@@ -90,47 +90,43 @@ equipment we will be using.
                the interface for plugging in either the sensor or the programming board.
                If the sensor is plugged into the slot, the mote can obtain data from the
                sensor. If the programming board is plugged into the slot, the mote can
-               obtain the application image from the computer and program the on-board
+               obtain the application image from the computer and use it to program the on-board
                embedded processor. The programmable embedded processor is the central
                processing unit. It runs sensor applications and controls all peripherals
                of the sensor.
-         \item Now, please turn off the battery of the mote and firmly plug the programming
+         \item Now, please remove the batteries, if any, from the mote, firmly plug the programming
                board into the mote, and use the USB cable to connect the programming board
-               with the computer. We are now ready to compile and run our first sensor application.
-         \item \emph{\textbf{Always turn off the battery when plugging the programming board into the mote!!}}
+               to the computer. We are now ready to compile and run our first sensor application.
+         \item \emph{\textbf{Always remove any batteries when plugging the programming board into the mote!!}}
       \end{itemize}
    \item Compile and install the sensor application \textbf{Blink}
       \begin{enumerate}
-         \item Open Fedora 12 in VM Player and log in as student with password student.
-         \item Open a terminal, and get into the directory 
+         \item Open a terminal, and type the following command:
                \begin{lstlisting}
-               Home/temp/Blink
+               cp -r /usr/local/bin/tinyos-release-tinyos-2_1_2/apps/Blink .
                \end{lstlisting}
-               This is where the source files of the Blink application are stored.
-               Later, you can make your own folder to keep your own source files.
+               This copy the source files of the Blink application into your home directory.
+               Later, you will make your own folder to keep your own source files.
          \item Type 
                \begin{lstlisting}
                make micaz
                \end{lstlisting}
                to compile and link the Blink application. You will then see some messages in
                the terminal showing the progress of compilation and linking.
-         \item Now, you can see that a new folder “build/micaz” has been created, and in
+         \item Now, you can see that a new folder “build” has been created, in
                which you will find the executable application image “main.srec” or “main.ihex”.
                However, keep in mind that the image is not executable in the computer.
                It is only executable in the mote.
-         \item Now, connect the USB cable to the computer and the mote, and check the
-               status of the connection in the top menu of VM Player.
+         \item Now, connect the USB cable to the computer and the mote.
          \item Now you can type
                \begin{lstlisting}
-               make micaz install,X mib510,/dev/ttyUSB0
+               make micaz install mib510,/dev/ttyUSB0
                \end{lstlisting}
-               to install the Blink application in the mote, where X is the sensor ID being
-               assigned to you. You will see some messages showing that the executable image
+               to install the Blink application in the mote. You will see some messages showing that the executable image
                is being transferred into the mote.
          \item At this point, you should see LEDs blinking on the mote. Unplug the programming board
-               from the mote and turn on the battery. You should see more LED's blinking.
-         \item Open Fedora's file browser, and drag the Blink folder from the VM to the Windows desktop.
-               You can now save the folder as your own work.
+               from the mote and insert the two batteries. Make sure you turn the switch on the mote to the
+               "on" position. You should see more LED's blinking.
       \end{enumerate}
 \end{enumerate}
 
