@@ -69,25 +69,25 @@
     Interfaces are bidirectional: they specify a set of \emph{commands}, which
     are functions to be implemented by the interface's provider, and a set of
     \emph{events}, which are functions to be implemented by the interface's user.
-    For a component to call the commands in an interface, it must implement the
-    events of that interface. A single component may use or provide multiple
-    interfaces and multiple instances of the same interface.
+    \begin{itemize}
+        \item For a component to call the commands in an interface, it must
+              implement the events of that interface.
+        \item A single component may use or provide multiple interfaces and
+              multiple instances of the same interface.
+        \item The set of interfaces which a component provides,
+              together with the set of interfaces that a component uses,
+              is considered that component's \emph{signature}. 
+    \end{itemize}
 
-    The set of interfaces which a component provides, together with the set
-    of interfaces that a component uses, is considered that component's \emph{signature}. 
-
-   \begin{itemize}
-      \item An interface declares a set of functions (\emph{commands} and \emph{events}), but does not implement the functions, nor specify which component provides the interface.
-      \item If a component wants to provide some functions so that other components can use the functions, the component shall provide the interface that declares the functions and implements them as well.
-      \item On the other hand, if a component wants to use a function from another component, it must use the interface provided by the other component.
-   \end{itemize}
-
-   There are two types of components: \emph{configuration} and \emph{module}.
-   \begin{itemize}
-      \item A configuration is simply a description of the sub components inside the configuration.
-      \item A configuration assembles sub components together and connects interfaces used by components to interfaces provided by others.
-      \item An application always has a top-level configuration.
-   \end{itemize}
+    There are two types of components: \emph{configuration} and \emph{module}.
+    \begin{itemize}
+        \item Modules provide the implementations of one or more interfaces.
+        \item Configurations are used to assemble other components together,
+              connecting interfaces used by components to interfaces provided
+              by others.
+        \item Every nesC application is described by a top-level configuration
+              that wires together the components inside. 
+    \end{itemize}
 
    A module is the basic unit that provides the functions of the application.
    \begin{itemize}
