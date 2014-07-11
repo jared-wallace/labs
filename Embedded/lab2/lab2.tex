@@ -66,10 +66,16 @@
     the used interfaces represent the functionality the component needs to
     perform its job in its implementation.
 
-    Interfaces are bidirectional: they specify a set of \emph{commands}, which are functions to be implemented by the interface's provider, and a set of events, which are functions to be implemented by the interface's user. For a component to call the commands in an interface, it must implement the events of that interface. A single component may use or provide multiple interfaces and multiple instances of the same interface.
+    Interfaces are bidirectional: they specify a set of \emph{commands}, which
+    are functions to be implemented by the interface's provider, and a set of
+    \emph{events}, which are functions to be implemented by the interface's user.
+    For a component to call the commands in an interface, it must implement the
+    events of that interface. A single component may use or provide multiple
+    interfaces and multiple instances of the same interface.
 
-The set of interfaces which a component provides together with the set of interfaces that a component uses is considered that component's signature. 
-   An interface provides the mechanism for a component to use functions in another component.
+    The set of interfaces which a component provides, together with the set
+    of interfaces that a component uses, is considered that component's \emph{signature}. 
+
    \begin{itemize}
       \item An interface declares a set of functions (\emph{commands} and \emph{events}), but does not implement the functions, nor specify which component provides the interface.
       \item If a component wants to provide some functions so that other components can use the functions, the component shall provide the interface that declares the functions and implements them as well.
