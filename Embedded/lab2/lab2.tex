@@ -88,15 +88,9 @@
         \item Every nesC application is described by a top-level configuration
               that wires together the components inside. 
     \end{itemize}
-
-   A module is the basic unit that provides the functions of the application.
-   \begin{itemize}
-      \item A module must implement every command of the interfaces it \textbf{provides}, and every event of the interfaces it \textbf{uses}.
-      \item A configuration has no implementation, but rather sub-components and wirings.
-      \item A module has no sub components or wirings, but rather an implementation.
-   \end{itemize}
-
-   All of the concepts (in italics), and the hierarchical application architecture, are actually reflected in the programming language (which we will learn next).
+    
+    Next we'll gain some hands on experience with how these abstract concepts
+    are reflected in actual code.
 
 \item \textbf{Source files of a sensor application}
    A sensor application has at least three files: a configuration file, a module file and a Makefile.
