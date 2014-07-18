@@ -1,0 +1,17 @@
+Review:
+
+    The structure of an embedded application(follow lab handout, illustrate on board)
+    For project, will need to define 2 events
+    Variable type uint8_t
+        unsigned integer of 8 bit length
+    mod operator
+        with 8 events, what mod value needed? (8)
+    look at previous lab for a big hint on structure
+
+Hints:
+
+    We want a repeating sequence of 8 different values
+    declare a counting variable
+    declare an array of the correct order, type and value of what we wish to display
+    use the counter mod 8 to find our index
+    the two events are booted and fired
