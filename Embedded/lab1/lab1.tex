@@ -103,13 +103,14 @@ equipment we will be using.
       \begin{enumerate}
          \item Open a terminal, and type the following command:
                \begin{lstlisting}
-               cp -r /usr/local/bin/tinyos-release-tinyos-2_1_2/apps/Blink .
+               mkdir Embedded
+               mkdir Embedded/lab1
                \end{lstlisting}
-               This copy the source files of the Blink application into your home directory, under the directory called Blink.
-               Later, you will make your own folder to keep your own source files.
+               This will create a directory to store your lab files. Place the lab files from the website
+               into the folder "lab1" that you created.
          \item Type 
                \begin{lstlisting}
-               cd Blink
+               cd Embedded/lab1
                make micaz
                \end{lstlisting}
                to compile and link the Blink application. You will then see some messages in
