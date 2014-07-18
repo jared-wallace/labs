@@ -105,24 +105,25 @@ equipment we will be using.
                \begin{lstlisting}
                cp -r /usr/local/bin/tinyos-release-tinyos-2_1_2/apps/Blink .
                \end{lstlisting}
-               This copy the source files of the Blink application into your home directory.
+               This copy the source files of the Blink application into your home directory, under the directory called Blink.
                Later, you will make your own folder to keep your own source files.
          \item Type 
                \begin{lstlisting}
+               cd Blink
                make micaz
                \end{lstlisting}
                to compile and link the Blink application. You will then see some messages in
                the terminal showing the progress of compilation and linking.
-         \item Now, you can see that a new folder “build” has been created, in
-               which you will find the executable application image “main.srec” or “main.ihex”.
+         \item Now, you can see that a new folder “build/micaz” has been created, in
+               which you will find the executable application images “main.srec” and “main.ihex”.
                However, keep in mind that the image is not executable in the computer.
                It is only executable in the mote.
          \item Now, connect the USB cable to the computer and the programming board.
          \item Now you can type
                \begin{lstlisting}
-               make micaz install mib510,/dev/ttyUSB0
+               sudo make micaz install mib510,/dev/ttyUSB0
                \end{lstlisting}
-               to install the Blink application in the mote. You will see some messages showing that the executable image
+               to install the Blink application in the mote. (You must be root to install to the hardware). The password is "Embedded". You will see some messages showing that the executable image
                is being transferred into the mote.
          \item At this point, you should see LEDs blinking on the mote. Unplug the programming board
                from the mote and insert the two batteries. Make sure you turn the switch on the mote to the

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.7.11)  11 JUL 2014 15:44
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.7.11)  16 JUL 2014 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -507,14 +507,14 @@ Overfull \hbox (5.33902pt too wide) in paragraph at lines 106--107
 File: devotion_to_duty.png Graphic file (type png)
 
 <use devotion_to_duty.png>
-Package pdftex.def Info: devotion_to_duty.png used on input line 139.
+Package pdftex.def Info: devotion_to_duty.png used on input line 140.
 (pdftex.def)             Requested size: 361.34999pt x 139.897pt.
  [2] [3 <./devotion_to_duty.png>] (./lab1.aux) ) 
 Here is how much of TeX's memory you used:
- 5158 strings out of 493321
- 75045 string characters out of 6140423
+ 5162 strings out of 493321
+ 75077 string characters out of 6140423
  161475 words of memory out of 5000000
- 8555 multiletter control sequences out of 15000+600000
+ 8559 multiletter control sequences out of 15000+600000
  7541 words of font info for 27 fonts, out of 8000000 for 9000
  953 hyphenation exceptions out of 8191
  38i,6n,58p,230b,1275s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -526,7 +526,7 @@ s/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on lab1.pdf (3 pages, 120812 bytes).
+Output written on lab1.pdf (3 pages, 121028 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
