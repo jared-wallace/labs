@@ -137,7 +137,12 @@
         \item Get two sensor IDs from the lab instructor. Use one for the sender and the other for the receiver. Modify Sender.h to include the receiver's ID.
         \item Modify the given code of the sender to send the following commands periodically and ligth the LEDs according to the following table.
         \item Modify the code of the receiver to receive the commands and light the LEDs according to the table.
-        \item Use the assigned sensor IDs when loading the executable into sensors.
+        \item Use the assigned sensor IDs when loading the executable into sensors. For example:
+            \begin{lstlisting}
+                su
+                make micaz install,1 mib510,/dev/ttyUSB0
+            \end{lstlisting}
+            for the sender (assuming \emph{your} sender id is 1)
     \end{itemize}
     \begin{table}[htbp]
     \begin{center}

@@ -122,7 +122,9 @@ equipment we will be using.
          \item Now, connect the USB cable to the computer and the programming board.
          \item Now you can type
                \begin{lstlisting}
-               sudo make micaz install mib510,/dev/ttyUSB0
+               su
+               (I will give you the password)
+               make micaz install mib510,/dev/ttyUSB0
                \end{lstlisting}
                to install the Blink application in the mote. (You must be root to install to the hardware). The password is "Embedded". You will see some messages showing that the executable image
                is being transferred into the mote.

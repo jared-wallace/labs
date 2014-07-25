@@ -1,0 +1,185 @@
+# is a comment. I will explain everything in this 
+# file with comments
+
+
+
+#THIS IS THE ONLY WEIRD THING. THIS 
+#LINE MUST BE AT THE TOP OF ALL PERL PROGRAMS.
+
+
+# The pound sign MUST BE THERE!!!!!!
+
+#!/usr/bin/perl
+
+
+#these are similar to preprocessor directives
+use strict;
+use warnings;
+
+
+#There are only 3 ways for declaring 'data types' in Perl
+
+#First, everything must start with my at declaration, such as int x;
+#------------
+# Three types
+#------------
+| $ | @ | % |
+#------------
+
+#   $ - Scalar - This holds a single value of any 'type'
+    my $int = 5;
+    my $doub = 5.5;
+    my $str = "5";
+
+#   What happens when I do this?
+    
+    my $str ="5";
+    $str++;
+    print $str;
+
+	########
+	#Output#
+	#------#
+	#  6   #
+	########
+#------------------------------------------------------------------------
+#  @ - List/Array
+
+my @ray = (5,6,7,8,9,10);
+
+#Array 
+#Push -append to end and returns new size
+#Pop  -LIFO pops value from end and returns it
+#Shift -FIFO shifts value off front and returns it
+#Unshift -appends to the front and returns new size
+
+# always use my
+# $# is array.length  returns last index of array. Must do plus 1
+
+for(my $x=0; $x<($#ray+1); $x++)
+{
+	print $ray[$x];
+}
+
+# But why do excess work when you don't have to?
+for my $i (@ray)
+{
+   print $i;
+}
+
+# Can we be even lazier? I think so.
+foreach(@ray)
+{
+   #   $_ is the default variable
+   print $_;
+}
+
+--------------------------------------------------------------------------
+#   % - Hash or Map
+
+#Hash
+my %longday = (
+        "Sun" => "Sunday",
+        "Mon" => "Monday",
+        "Tue" => "Tuesday",
+);
+
+print $longday{"Sun"};  
+
+# prints Sunday
+
+
+my %map;
+
+$map{"bob"} = "Arkansas";
+$map{"asa"} = "Alabama";
+$map{"mason"} = "Texas";
+#sorts the keys, then prints
+for(sort keys %map)
+{
+	print "$_ is from $map{$_}\n";
+}
+
+
+--------------------------------------------------------------------------
+#ALWAYS chomp your inupt. Removes extra \n character at the end
+my $string = <STDIN>;
+chomp($string);
+print "You typed $string\n";
+
+--------------------------------------------------------------------------
+
+#File Io#
+#-------------------------------
+# "<" input
+# ">" output
+
+my $fh;
+open($fh, ">", "test.txt");
+
+close($fh);
+for(<$fh>)
+{
+ print $_;
+}
+#-------------------------------
+# MORE ADVANCED PERL STUFF
+#-------------------------------
+
+
+# Anon Hash reference. Works with arrays too
+
+my $scaler;
+
+$scaler = {};
+
+$scaler -> {"key"} = "value";
+
+{} = anon hash
+() = anon array
+
+
+--------------------------------------------------------------------------
+#initialization list
+my ($value, $from, $to, $money, %rates);
+
+%rates = (
+        "pounds"           => 1,
+        "dollars"          => 1.6,
+        "marks"            => 3.0,
+        "french francs"    => 10.0,
+);
+
+print "Enter the starting currency \n";
+$from = <STDIN>;
+print "Enter the currency to convert to \n";
+$to = <STDIN>;
+print "Enter the amount to be converted \n";
+$money = <STDIN>;
+chomp($from, $to, $money);
+
+if(not exists $rates{$from})
+{
+        die "$from doesn't exist in our database.\n";
+}
+if(not exists $rates{$to})
+{
+        die "$to doesn't exist in our database.\n";
+}
+
+print "Mathums and stuff";
+
+
+my @english = qw(January February March April May June):
+my @french =  qw(Janvier Fevrier  Mars  Avril Mai Juin);
+my %months = (english =>\@english, french => \@french);
+
+my $ddd = qw(Hello world);
+
+#Array
+{}
+my @ray = (1,2,4);
+
+#Array Reference []
+my $pointer = [1,2,3];
+

@@ -1,0 +1,64 @@
+struct Player
+{
+	//attributes go here
+};
+struct Board
+{
+	char space;
+	char stat;
+};
+
+
+//replace your function prototypes with this. 
+void loadBoard(ifstream& fin, Board board[][20], int& locR, int& locC );
+void printBoard(Board board [][20]);
+
+//replace both functions with these
+
+void loadBoard(ifstream& fin, Board board[][20], int& locR, int& locC )
+{
+	string temp;
+	for(int r=0; r<20; r++)
+	{
+		getline(fin,temp);
+		for(unsigned int c =0; c<temp.length(); c+=2)
+		{
+			if(temp.at(c)=='P')
+			{
+				locR = r;
+				locC = (c/2);
+				board[r][c/2].space = temp.at(c);
+				board[r][c/2].stat = temp.at(c);
+			}
+			else
+			{
+				if(temp.at(c)=='*'||temp.at(c)=='.')
+				{
+					board[r][c/2].space = temp.at(c);
+					board[r][c/2].stat = temp.at(c);
+				}
+				else
+				{
+					board[r][c/2].stat=temp.at(c);
+					board[r][c/2].space='.';
+				}
+			}
+
+		}
+
+	}
+
+}
+
+void printBoard(Board board [][20])
+{
+	for(int r=0; r<20; r++)
+	{
+		for(int c=0; c<20; c++)
+		{
+			cout<<board[r][c].space << " ";
+		}
+
+		cout<<endl;
+	}
+}
