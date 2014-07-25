@@ -1,0 +1,143 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{courier}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[width=5in]{caption}
+\usepackage{hyphenat}
+\usepackage[section]{placeins}
+\usepackage{cmll}
+
+% Format a sectionless paragraph
+\newcommand*\unparagraph{
+	\par
+	\nopagebreak
+	\vskip3.25ex plus1ex minus.2ex
+	\noindent
+}
+
+% define extra colors
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{purple}{RGB}{159,0,197}
+
+% define the code listing format
+\lstset{
+	language=C++,
+	basicstyle=\footnotesize\ttfamily,
+	backgroundcolor=\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	frame=none,
+	tabsize=3,
+	keywordstyle=\color{purple},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{blue},
+	escapeinside={\%*}{*)}
+}
+
+% define the title/header
+\title{\Large CS 1428 Honors\\Lab 2} 
+\author{Jared Wallace}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{30mm}
+
+\section*{Questions}
+
+\begin{enumerate}
+    \item (10 pts) Write a snippet of code that includes an if statement to compare the value of
+        x (a variable inputted by the user) to the named constant \emph{NUM}, which you must declare
+          and assign a value of your choice ($0<=NUM<=256$). You must prompt the user for the value of x.
+    \vspace{40mm}
+    \item (10 pts) Evaluate these logical expressions. Write the answers on this work sheet.
+          Do NOT use the computer to evaluate these expressions.
+          \begin{itemize}
+              \item $T \with \with F$
+            \item $T || F$
+            \item $F \with \with F$
+            \item $!( T \with \with T )$
+            \item $!T \with \with T$
+          \end{itemize}
+    \vspace{30mm}
+\item (10 pts) Just like in our last lab, we are going to use named constants for our program.
+    Declare the following named constants with the given values: (All are integer constants)
+            \begin{itemize}
+                \item OP\_ADD with a value of 0
+                \item OP\_SUBTRACT with a value of 1
+                \item OP\_MULTIPLY with a value of 2
+                \item OP\_DIVIDE with a value of 3
+                \item OP\_MOD with a value of 4
+                \item OP\_EXPONENT with a value of 5
+                \item OP\_READ with a value of 6
+                \item OP\_WRITE with a value of 7
+            \end{itemize}
+    \item (10 pts) What is the output for the following snippet of code?
+        \begin{lstlisting}
+        int main()
+        {
+            int x = 3;
+            bool y = false;
+            cout << x++ << endl;
+            if(y && ++x == 5)
+            {
+                cout << "Hooray!"<<endl;
+            }
+            else
+            {
+                cout << "awww...."<<endl;
+            }
+            cout << x << endl;
+
+            return 0;
+        }
+        \end{lstlisting}
+    \item (60 pts) You will need to make a program named lab2h.cpp that will function as a
+          basic calculator. Requirements:
+        \begin{itemize}
+            \item Declare the constants from question 3 in your program.
+            \item Declare the following variables:
+                \begin{enumerate}
+                    \item inst (integer)
+                    \item data0 (integer)
+                    \item data1 (integer)
+                    \item data2 (integer)
+                    \item source (string)
+                \end{enumerate}
+            \item Prompt the user to input the value of inst, which will be the numerical
+                  interpretation of the operation you wish to perform, followed by the values
+                  of data1 and data2, which are the two numbers to perform the operation on.
+            \item Use if statements to handle control flow. (You may use other tools if you know them)
+            \item The results of the calculations should be stored in the variable data0.
+            \item If the user selects an option that the calculatoris not equipped to perform,
+                  merely output the string “Unable to perform operation, assigning data0 to -1”
+                  and assign data0 to -1.
+            \item After each calculation, output a message to the user that their calculation is done
+                  and output the result. Both messages should go to standard out.
+            \item Your calculator must at least handle one operation per execution. You may, at your discretion,
+                  code it to allow more than one.
+        \end{itemize}
+
+\end{enumerate}
+\section*{Extra Credit}
+(10 pts possible) What is the logical equivalent of the following statement and what law does it follow?
+    (p and q represent two different values)
+
+    $!( p \with \with q )$
+\section*{Deliverables}
+Hard copy of the source code you wrote (lab1h.cpp) and the answers to the questions.
+Soft copy (upload to homework upload) of your source code.
+
+% Comic at the bottom
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=5in]{academia_vs_business.png}
+    \caption*{Some engineer out there has solved P=NP and it's locked up in an electric eggbeater calibration routine.  For every 0x5f375a86 we learn about, there are thousands we never see.}
+\end{figure}
+\end{document}
