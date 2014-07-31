@@ -9,6 +9,7 @@
 \usepackage[width=5in]{caption}
 \usepackage{hyphenat}
 \usepackage{hyperref}
+\usepackage{float}
 
 % Format a sectionless paragraph
 \newcommand*\unparagraph{
@@ -135,17 +136,20 @@
 \subsection*{Compile and run the example application}
     \begin{itemize}
         \item Get two sensor IDs from the lab instructor. Use one for the sender and the other for the receiver. Modify Sender.h to include the receiver's ID.
-	      Note: You need to modify the command you use to install the program onto the mote! Use the following syntax:
-		\begin{lstlisting}
-		su
-		(enter password)
-		make micaz install,[insert appropriate id] mib510,/dev/ttyUSB0
-		\end{lstlisting}
-		If your id numbers are 3 and 4, where 3 is your sender id, then when installing the sender program you would write:
-		\begin{lstlisting}
-		make micaz install,3 mib510,/dev/ttyUSB0
-		\end{lstlisting}
-        \item Modify the given code of the sender to send the following commands periodically and ligth the LEDs according to the following table.
+        \item Modify the given code of the sender to send the following commands periodically and light the LEDs according to the following table.
+        \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ |l|l|l|l| }
+                \hline
+                \textbf{Command} & \textbf{Yellow LED} & \textbf{Green LED} & \textbf{Red LED} \\ \hline
+                0 & off & off & off \\ \hline
+                2 & on & off & off \\ \hline
+                4 & off & on & off \\ \hline
+                6 & off & off & on \\ \hline
+                8 & on & on & on \\ \hline
+            \end{tabular}
+        \end{center}
+        \end{table}
         \item Modify the code of the receiver to receive the commands and light the LEDs according to the table.
         \item Use the assigned sensor IDs when loading the executable into sensors. For example:
             \begin{lstlisting}
@@ -154,19 +158,6 @@
             \end{lstlisting}
             for the sender (assuming \emph{your} sender id is 1)
     \end{itemize}
-    \begin{table}[htbp]
-    \begin{center}
-        \begin{tabular}{ |l|l|l|l| }
-            \hline
-            \textbf{Command} & \textbf{Yellow LED} & \textbf{Green LED} & \textbf{Red LED} \\ \hline
-            0 & off & off & off \\ \hline
-            2 & on & off & off \\ \hline
-            4 & off & on & off \\ \hline
-            6 & off & off & on \\ \hline
-            8 & on & on & on \\ \hline
-        \end{tabular}
-    \end{center}
-    \end{table}
 
 \subsection*{Convert your app to be more reliable}
 
