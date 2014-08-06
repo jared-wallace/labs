@@ -1,7 +1,7 @@
 /*
  *This is the skeleton outline of an mp3 manager application.
  *I have included some stuff for you, namely the ability to
- *actually play the mp3 from your own application. You job
+ *actually play the mp3 from your own application. Your job
  *is to implement the struct to hold the relevant data about
  *each song. Ignore any code you don't understand (that I wrote)
  *as it is not essential for you to understand.
@@ -32,18 +32,26 @@ int main()
 
     while (instruction != 'q' && instruction != 'Q')
     {
+        ///////////////////////////////////////////////////////////////////////
         // Insert menu presentation code here
+        ///////////////////////////////////////////////////////////////////////
         std::cout << "Enter your choice ";
         std::cin >> instruction;
 
         switch (instruction)
         {
+            ///////////////////////////////////////////////////////////////////
+            // You need to write the rest of the cases, according to the
+            // instructions in the handout
+            ///////////////////////////////////////////////////////////////////
             case 'P':
             case 'p':
+                ///////////////////////////////////////////////////////////////
                 // Insert selection code here
                 // This code needs to eventually populate
                 // the variable 'filename' with the actual
                 // filename of the mp3 to play.
+                ///////////////////////////////////////////////////////////////
 
                 // Let's verify existence of the file
                 f.open(filename.c_str());
@@ -78,6 +86,14 @@ int main()
 }
 
 
+/*
+ *This function seeks and destroys any and all instances of vlc.
+ *It walks the /proc directory, examining each process it finds and
+ *comparing the process name to the string "vlc".
+ *Pre: None
+ *Post: All existing instances of vlc are terminated
+ *Invariant: None
+ */
 void KillVLC()
 {
     DIR *directory_pointer;
@@ -85,6 +101,7 @@ void KillVLC()
     std::string path, process_name;
     std::ifstream f;
 
+    // Get our handle
     directory_pointer = opendir ("/proc/");
     if (directory_pointer == NULL)
     {
@@ -92,12 +109,15 @@ void KillVLC()
         return;
     }
 
+    // These boots are made for walking
     while ((entry = readdir (directory_pointer)) != NULL)
     {
         path = "/proc/";
         path += entry->d_name;
         path += "/comm";
         f.open(path.c_str());
+        // Since the process may terminate between
+        // the start of the loop and now...
         if (f.good())
         {
             f >> process_name;
@@ -109,7 +129,17 @@ void KillVLC()
     closedir (directory_pointer);
 }
 
-
+/*
+ *This function works similar to a daemon, in that
+ *it creates a new session with a corresponding new
+ *process id (pid). This allows our original program
+ *to resume operation immediately, instead of waiting
+ *for vlc to terminate.
+ *Pre: A valid (existing) filename as first argument
+ *Post: vlc has been started and control returned to
+ *    the parent process.
+ *Invariant: None
+ */
 void PlayMusic(std::string filename)
 {
     // Change file mask
