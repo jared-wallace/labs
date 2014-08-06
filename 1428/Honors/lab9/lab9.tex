@@ -1,0 +1,119 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{courier}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[width=5in]{caption}
+\usepackage{hyphenat}
+\usepackage[section]{placeins}
+\usepackage{cmll}
+\usepackage{float}
+\usepackage{hyperref}
+
+% Format a sectionless paragraph
+\newcommand*\unparagraph{
+	\par
+	\nopagebreak
+	\vskip3.25ex plus1ex minus.2ex
+	\noindent
+}
+
+% define extra colors
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{purple}{RGB}{159,0,197}
+
+% define the code listing format
+\lstset{
+	language=C++,
+	basicstyle=\footnotesize\ttfamily,
+	backgroundcolor=\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	frame=none,
+	tabsize=3,
+	keywordstyle=\color{purple},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{blue},
+	escapeinside={\%*}{*)}
+}
+
+% define the title/header
+\title{\Large CS 1428 Honors\\Lab 8}
+\author{Jared Wallace}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{30mm}
+
+\section*{Overview}
+Today we will be extending our assembler to make it Turing Complete. We are going to modify it so that
+the assembler now incorporates a \emph{jump} instruction and a \emph{conditional jump} instruction.
+Additionally, we will be \emph{refactoring} the assembler to utilize functions. Refactoring is the
+process of modifying code so that the internal structure changes, but the external behavior remains
+consistant. For our assembler, this will largely consist of simple cut and paste actions, but in the
+real world it usually involves changing algorithms to be more efficient and other, more substantive
+changes.
+\section*{Questions}
+\begin{enumerate}
+    \item (15 pts) Last week, we had modified our assembler to read in the instructions for each program
+        into "program" memory. When we did that, each instruction line gained an additional piece of
+        associated data -- its \emph{index} in the program array. This index number functions as a line
+        number does in a traditional program. Accordingly, just as you can specify a line number in C++ 
+        to "goto", we wish to implement jumping to a certain index number for our assembler.
+
+        If you recall, our assembler reads through the instruction lines by using a loop. We can
+        therefore implement our "jump" instruction by manipulating the loops index variable.
+        \emph{(Usually the index variable is 'i')}. Be careful! In a for loop, the index variable is updated,
+        or incremented, when the for loop reaches the closing bracket. You must account for this in your
+        jump function, lest you incur an "off by one" error. For now, write a simple case statement to
+        correctly handle the jump command. Use the following format:
+        \begin{lstlisting}
+        8 [offset] 0 0
+        \end{lstlisting}
+        Hint: offset values can be negative to effect a jump "backwards"
+    \vspace{30mm}
+    \item (15 pts) Our conditional jump instruction will take the form of a "Branch if Equal"
+        statement. In other words, the instruction will have three values: the offset and two index values
+        of data to compare. If the two data values are equal, the jump occurs to the specified offset. Otherwise,
+        nothing changes and execution continues at the next instruction. The instruction will take the following
+        form:
+        \begin{lstlisting}
+        9 [offset] [index 1] [index 2]
+        \end{lstlisting}
+        Write the case statement implementing this feature.
+    \vspace{40mm}
+\item (70 pts) Using the answers from questions one through two, modify your
+    assembler so that it implements both \emph{jump} and the \emph{conditional jump}.
+    Your program should comply with the following requirements:
+    \begin{itemize}
+        \item Reads all instructions into memory at one time.
+        \item Processes the instructions in order, one line at a time.
+        \item Properly handles the same sample programs from last time (supplied)
+        \item Properly handles one new program that includes jumps and conditional jumps
+        \item Implements each type of instruction as its own function, as well as creating
+            a function to handle the initial reading and storage of instructions into program
+            memory. Use the following prototype for this:
+            \begin{lstlisting}
+            int loadProgram(string filename, int program_memory[512][4]);
+            \end{lstlisting}
+            The value of the integer returned should be the number of lines of instructions
+            read into memory. If the operation fails, it should return 0.
+    \end{itemize}
+\end{enumerate}
+\section*{Deliverables}
+Hard copy of the source code you wrote (assembler.cpp). Soft copy (upload to homework upload) of
+your source code. As always, make sure you make a commit and push your work.
+
+% Comic at the bottom
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=4in]{identity.png}
+    \caption*{Not sure why I just taught everyone to flawlessly impersonate me to pretty much anyone I know. Just remember to constantly bring up how cool it is that birds are dinosaurs and you'll be set.}
+\end{figure}
+\end{document}
