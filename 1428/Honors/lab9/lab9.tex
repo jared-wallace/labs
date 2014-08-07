@@ -52,63 +52,33 @@
 \vspace{30mm}
 
 \section*{Overview}
-Today we will be extending our assembler to make it Turing Complete. We are going to modify it so that
-the assembler now incorporates a \emph{jump} instruction and a \emph{conditional jump} instruction.
-Additionally, we will be \emph{refactoring} the assembler to utilize functions. Refactoring is the
-process of modifying code so that the internal structure changes, but the external behavior remains
-consistant. For our assembler, this will largely consist of simple cut and paste actions, but in the
-real world it usually involves changing algorithms to be more efficient and other, more substantive
-changes.
+Today we are going to practice using structs for fun and profit. We're
+going to build an MP3 manager application (that actually plays mp3's!)
 \section*{Questions}
 \begin{enumerate}
-    \item (15 pts) Last week, we had modified our assembler to read in the instructions for each program
-        into "program" memory. When we did that, each instruction line gained an additional piece of
-        associated data -- its \emph{index} in the program array. This index number functions as a line
-        number does in a traditional program. Accordingly, just as you can specify a line number in C++ 
-        to "goto", we wish to implement jumping to a certain index number for our assembler.
-
-        If you recall, our assembler reads through the instruction lines by using a loop. We can
-        therefore implement our "jump" instruction by manipulating the loops index variable.
-        \emph{(Usually the index variable is 'i')}. Be careful! In a for loop, the index variable is updated,
-        or incremented, when the for loop reaches the closing bracket. You must account for this in your
-        jump function, lest you incur an "off by one" error. For now, write a simple case statement to
-        correctly handle the jump command. Use the following format:
-        \begin{lstlisting}
-        8 [offset] 0 0
-        \end{lstlisting}
-        Hint: offset values can be negative to effect a jump "backwards"
-    \vspace{30mm}
-    \item (15 pts) Our conditional jump instruction will take the form of a "Branch if Equal"
-        statement. In other words, the instruction will have three values: the offset and two index values
-        of data to compare. If the two data values are equal, the jump occurs to the specified offset. Otherwise,
-        nothing changes and execution continues at the next instruction. The instruction will take the following
-        form:
-        \begin{lstlisting}
-        9 [offset] [index 1] [index 2]
-        \end{lstlisting}
-        Write the case statement implementing this feature.
-    \vspace{40mm}
-\item (70 pts) Using the answers from questions one through two, modify your
-    assembler so that it implements both \emph{jump} and the \emph{conditional jump}.
-    Your program should comply with the following requirements:
+    \item (15 pts) Explain what a struct is and why it's useful. Two bonus points if
+        you can explain what the main alternative to a struct is \emph{and} how
+        it differs from a struct.
+    \item (85 pts) Write an mp3 manager, starting with the supplied code, that
+        adheres to the following specifications:
     \begin{itemize}
-        \item Reads all instructions into memory at one time.
-        \item Processes the instructions in order, one line at a time.
-        \item Properly handles the same sample programs from last time (supplied)
-        \item Properly handles one new program that includes jumps and conditional jumps
-        \item Implements each type of instruction as its own function, as well as creating
-            a function to handle the initial reading and storage of instructions into program
-            memory. Use the following prototype for this:
-            \begin{lstlisting}
-            int loadProgram(string filename, int program_memory[512][4]);
-            \end{lstlisting}
-            The value of the integer returned should be the number of lines of instructions
-            read into memory. If the operation fails, it should return 0.
+        \item Declares a struct to hold the following information:
+            \begin{itemize}
+                \item Song title
+                \item Filename
+                \item Genre
+                \item Track number
+            \end{itemize}
+        \item Declares an array (or similar alternative) to handle storing the structs
+        \item Provides options to enter a new song, delete an existing song, display
+            all existing songs, and play a specific song (method of selecting is up to you;
+            by name, track or any other struct field).
+        \item Utilizes a nicely formatted menu driven interface
     \end{itemize}
 \end{enumerate}
 \section*{Deliverables}
-Hard copy of the source code you wrote (assembler.cpp). Soft copy (upload to homework upload) of
-your source code. As always, make sure you make a commit and push your work.
+Hard copy of the source code you wrote (mp3.cpp). Soft copy (upload to homework upload) of
+your source code. You may, at your discretion, use Git for version control -- it is not required.
 
 % Comic at the bottom
 \begin{figure}[ht!]

@@ -29,11 +29,14 @@ int main()
     std::ifstream f;
     char instruction = 'c';
     pid_t pid = 0;
+    ///////////////////////////////////////////////////////////////////////////
+    // Insert your struct declaration here                                   //
+    ///////////////////////////////////////////////////////////////////////////
 
     while (instruction != 'q' && instruction != 'Q')
     {
         ///////////////////////////////////////////////////////////////////////
-        // Insert menu presentation code here
+        // Insert menu presentation code here                                //
         ///////////////////////////////////////////////////////////////////////
         std::cout << "Enter your choice ";
         std::cin >> instruction;
@@ -41,16 +44,16 @@ int main()
         switch (instruction)
         {
             ///////////////////////////////////////////////////////////////////
-            // You need to write the rest of the cases, according to the
-            // instructions in the handout
+            // You need to write the rest of the cases, according to the     //
+            // instructions in the handout                                   //
             ///////////////////////////////////////////////////////////////////
             case 'P':
             case 'p':
                 ///////////////////////////////////////////////////////////////
-                // Insert selection code here
-                // This code needs to eventually populate
-                // the variable 'filename' with the actual
-                // filename of the mp3 to play.
+                // Insert selection code here                                //
+                // This code needs to eventually populate                    //
+                // the variable 'filename' with the actual                   //
+                // filename of the mp3 to play.                              //
                 ///////////////////////////////////////////////////////////////
 
                 // Let's verify existence of the file
@@ -129,6 +132,7 @@ void KillVLC()
     closedir (directory_pointer);
 }
 
+
 /*
  *This function works similar to a daemon, in that
  *it creates a new session with a corresponding new
@@ -149,11 +153,16 @@ void PlayMusic(std::string filename)
     // In other words, grab a new pid
     pid_t sid = setsid();
     if (sid < 0)
-        exit(EXIT_FAILURE);
-    // Close standard file descripters
+    {
+        std::cerr << "Failed spawn"
+        return;
+    }
+    // Close standard file descripters, except
+    // for stdout ofc, we want to hear the music :)
     close(STDIN_FILENO);
     close(STDERR_FILENO);
 
     fflush(NULL);
     execl("/usr/bin/vlc", "vlc", filename.c_str(), NULL);
+    return;
 }
