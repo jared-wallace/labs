@@ -1,0 +1,6 @@
+Install (yum) rxtx package
+Add user to lock group
+
+Run
+
+java -jar serial.jar hdlc|raw
