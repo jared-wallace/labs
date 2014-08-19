@@ -1,0 +1,14 @@
+Follow the following steps to run the application in a sensor.
+
+1) Find the file name of the HEX file. For example, the file name is "serial.hex"
+
+2) Type the command below to upload the executable to the sensor.
+    "PORT=/dev/ttyUSB0 HEX=serial.hex make"
+
+Follow the following steps to read the low level data via the serial port from a sensor.
+
+1) get into the serial folder.
+
+2) Type the command below to read the raw data from the serial port.
+    "java -jar serial.jar raw"
+
