@@ -1,0 +1,48 @@
+Honors Lab 00h Lecture
+
+Welcome
+   -Introduce yourself and assistant. Slight background in work for the department
+
+Class
+   -Discuss what the class/lab is. Expectations of instructor
+       *Be sure to say that this lab is designed to be challenging.
+
+Syllabus
+   -Attendance
+   -Grading
+   -Office Hours
+
+Lecture
+-------
+What is Computer Science?
+
+Computer Science - the study of algorithms
+Algorithms - process or set of rules to be followed in calculations or other problem-solving operations.
+
+"Computer science is no more about computers than astronomy is about telescopes." -Edsger Dijkstra
+
+Architecture
+Difference between assembly and machine code
+
+Basics of a program 
+4 main parts
+-Preprocessor directive   -pulls in other declarations
+-compiler directive       - tells compiler how to lookup names
+-main function            -where code goes
+-program terminator       -tells computer what happened
+
+Hello World
+
+Compilation Process - Images on webpage
+
+Data Types
+-int
+-long
+-float
+-double
+-char
+-bool
+-string
+
+Variables and assignment/literals
+
