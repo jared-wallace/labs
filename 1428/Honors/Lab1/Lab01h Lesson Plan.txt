@@ -1,0 +1,27 @@
+Review - Assembly/Machine, 4 main parts (preprocessor directive, compiler directive, main, program terminator)
+
+Syntax Errors-put broken Hello World on board
+Debug
+
+Operators & Expressions
+-Mathums +-*/%
+assign to variables
+
+shortcuts += -= *= /= %=
+
+Postfix & prefix inc/dec
+a++ ++a
+
+cin
+
+Explain Lab - Go over basic assembler
+
+Git
+-what is it?
+-why do we use it?
+Setup repo
+
+Give lab
+
+
+
