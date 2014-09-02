@@ -56,6 +56,34 @@ I will be writing and giving to you those small, basic programs for your assembl
 Today we will start writing the assembler. To facilitate the modular approach we are taking with
 this project, we are going to maintain it in a \emph{Git} repository.
 
+The initial setup for a git repository is fairly straightforward. For the purposes of this class,
+I'm going to just give you the steps with a minimal explanation. For more information, see the link
+on the website or just ask me during office hours. Go ahead and pull up a terminal window, either by
+booting Linux or by opening PuTTy and connecting to Eros (I'll explain how). Then follow these steps:
+\begin{enumerate}
+    \item mkdir Lab\_Files
+    \item cd Lab\_Files
+    \item mkdir Assembler
+    \item cd Assembler
+    \item touch README.md
+    \item git init
+    \item git add README.md
+    \item git commit -m 'Initial'
+    \item ssh-keygen -t rsa (press enter for each prompt)
+    \item cat .ssh/id\_rsa.pub
+    \item stop and wait for instructions to setup a remote repository
+    \item git config --global user.name "your\_name\_here"
+    \item git config --global user.email "your\_email\_here"
+    \item git push origin master
+\end{enumerate}
+
+Now, when you write the program for last item of this lab, you will "save" your work by doing:
+\begin{enumerate}
+    \item git add //name of file//
+    \item git commit -m 'Enter a witty commit message here'
+    \item git push origin master
+\end{enumerate}
+
 \begin{enumerate}
     \item(10 pts) Every C++ program starts out with the same basic form, or skeleton.
          What are the different parts of this skeleton?
