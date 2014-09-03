@@ -1,0 +1,54 @@
+Discuss logistical details. Website(including links), email, office and hours,
+    code submittal process
+
+Mention style guide, stress that we will reinforce as we come across relevant
+    elements
+
+Cover attendance expectations, grading
+
+Basic elements  of a program (hello world example), mention future labs in
+    Linux
+
+    Preprocessor directive(start with hash tag, no semicolon, prevents
+        reinventing wheel)
+    Using directive (why we use it globally, why bad practice)
+    Main function
+    Program terminator (<cstdlib>)
+
+Work through hello world, including discussing the compilation process
+
+Data types
+
+primitive:
+    int
+        long, short, signed, unsigned
+        guaranteed 16 bits, usually 32
+        long guarantees 32
+        short is 16 bits
+        16 bit means -32,767 to 32,767 (65,535 unsigned)
+        32 bit means -2,147,483,647 to 2,147,483,647
+    float
+        IEEE 32 bit(7 digits more or less)
+    double
+        IEEE 64 bit(15 digits)
+        (cover why float comparison bad)
+    char
+    bool
+        true(1) or false(0)
+
+string type
+    must #include<string> (although some compilers will automatically do it)
+
+Variables and literals, assignments:
+    why variables
+    how to assign value to variable
+
+Expressions:
+    computes value
+    assigns value
+    modifies value
+
+Discuss standard header:
+    name
+    date
+    lab number
