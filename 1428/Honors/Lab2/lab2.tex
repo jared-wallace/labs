@@ -66,18 +66,6 @@
             \item $!T \with \with T$
           \end{itemize}
     \vspace{30mm}
-\item (10 pts) Just like in our last lab, we are going to use named constants for our program.
-    Declare the following named constants with the given values: (All are integer constants)
-            \begin{itemize}
-                \item OP\_ADD with a value of 0
-                \item OP\_SUBTRACT with a value of 1
-                \item OP\_MULTIPLY with a value of 2
-                \item OP\_DIVIDE with a value of 3
-                \item OP\_MOD with a value of 4
-                \item OP\_EXPONENT with a value of 5
-                \item OP\_READ with a value of 6
-                \item OP\_WRITE with a value of 7
-            \end{itemize}
     \item (10 pts) What is the output for the following snippet of code?
         \begin{lstlisting}
         int main()
@@ -101,21 +89,30 @@
     \item (60 pts) You will need to make a program named lab2h.cpp that will function as a
           basic calculator. Requirements:
         \begin{itemize}
-            \item Declare the constants from question 3 in your program.
+            \item Declare the following constants (same as last week).
+            \begin{itemize}
+                \item OP\_ADD with a value of 0
+                \item OP\_SUBTRACT with a value of 1
+                \item OP\_MULTIPLY with a value of 2
+                \item OP\_DIVIDE with a value of 3
+                \item OP\_MOD with a value of 4
+                \item OP\_EXPONENT with a value of 5
+                \item OP\_READ with a value of 6
+                \item OP\_WRITE with a value of 7
+            \end{itemize}
             \item Declare the following variables:
                 \begin{enumerate}
                     \item inst (integer)
                     \item data0 (integer)
                     \item data1 (integer)
                     \item data2 (integer)
-                    \item source (string)
                 \end{enumerate}
             \item Prompt the user to input the value of inst, which will be the numerical
                   interpretation of the operation you wish to perform, followed by the values
                   of data1 and data2, which are the two numbers to perform the operation on.
             \item Use if statements to handle control flow. (You may use other tools if you know them)
             \item The results of the calculations should be stored in the variable data0.
-            \item If the user selects an option that the calculatoris not equipped to perform,
+            \item If the user selects an option that the calculator is not equipped to perform,
                   merely output the string “Unable to perform operation, assigning data0 to -1”
                   and assign data0 to -1.
             \item After each calculation, output a message to the user that their calculation is done
@@ -131,7 +128,7 @@
 
     $!( p \with \with q )$
 \section*{Deliverables}
-Hard copy of the source code you wrote (lab1h.cpp) and the answers to the questions.
+Hard copy of the source code you wrote (lab2h.cpp) and the answers to the questions.
 Soft copy (upload to homework upload) of your source code.
 
 % Comic at the bottom
