@@ -92,13 +92,13 @@
             \item Declare the following constants (same as last week).
             \begin{itemize}
                 \item OP\_ADD with a value of 0
-                \item OP\_SUBTRACT with a value of 1
-                \item OP\_MULTIPLY with a value of 2
-                \item OP\_DIVIDE with a value of 3
+                \item OP\_SUB with a value of 1
+                \item OP\_MUL with a value of 2
+                \item OP\_DIV with a value of 3
                 \item OP\_MOD with a value of 4
-                \item OP\_EXPONENT with a value of 5
-                \item OP\_READ with a value of 6
-                \item OP\_WRITE with a value of 7
+                \item OP\_EXP with a value of 5
+                \item OP\_RED with a value of 6
+                \item OP\_WRT with a value of 7
             \end{itemize}
             \item Declare the following variables:
                 \begin{enumerate}
@@ -110,15 +110,18 @@
             \item Prompt the user to input the value of inst, which will be the numerical
                   interpretation of the operation you wish to perform, followed by the values
                   of data1 and data2, which are the two numbers to perform the operation on.
+                  In other words, to add 3 and 5 together, the user would enter "0", followed by
+                  "3" and then "5".
             \item Use if statements to handle control flow. (You may use other tools if you know them)
-            \item The results of the calculations should be stored in the variable data0.
+            \item The result of the calculation should be stored in the variable data0.
             \item If the user selects an option that the calculator is not equipped to perform,
-                  merely output the string “Unable to perform operation, assigning data0 to -1”
-                  and assign data0 to -1.
-            \item After each calculation, output a message to the user that their calculation is done
-                  and output the result. Both messages should go to standard out.
-            \item Your calculator must at least handle one operation per execution. You may, at your discretion,
-                  code it to allow more than one.
+                  (like 6 or 7, for instance, or any other invalid number)
+                  merely output the string “Unable to perform operation."
+                  and assign the value "-1" to data0.
+            \item After the calculation, output a message to the user informing them that their
+                  calculation is done and output the result.
+            \item Your calculator must at least handle one operation per program execution.
+                  You may, at your discretion, code it to allow more than one.
         \end{itemize}
 
 \end{enumerate}
