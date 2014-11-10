@@ -67,8 +67,8 @@ A brief listing of pros and cons of Python are below.
 
 Here's an example Python program that prints "Hello World"
 \begin{lstlisting}
-#!/usr/bin/python
-print "Hello World"
+    #!/usr/bin/python
+    print "Hello World"
 \end{lstlisting}
 That's all the code you need.
 
@@ -101,28 +101,35 @@ for each. Remember, whitespace (spaces, tabs) matters in Python!
 
 Python also offers many different ways to manipulate the list, like reverse() and sort().
 
-\section*{Program}
-Alright, we are going to be creating a webpage today (don't worry, I'll give you the HTML part)
+\section*{Problems}
+\begin{enumerate}
+    \item (30 pts) Write a program to add all the natural numbers below 1000 that are multiples of 3 or 5.
+    \item (70 pts) Write a program to add all the even numbers in the fibonacci sequence below 4,000,000
+\end{enumerate}
+
+\section*{Bonus}
+Create a webpage today (don't worry, I'll give you the HTML part)
 that aggregates RSS feeds and displays them upon page load. We will be using an API, or Application
-Programming Interface, located at the following address: \url{https://wiki.python.org/moin/RssLibraries}.
+Program Interface, located at the following address: \url{https://wiki.python.org/moin/RssLibraries}.
 
 I have provided the skeleton code, but you will need to read the API page to figure out how to implement
 the feed display. It's highly recommended you utilize the interpreter for debugging.
 
+Note: You will need to make your file world readable and executable by executing the following line in the terminal.
+\begin{lstlisting}
+chmod 755 index.py
+\end{lstlisting}
 
-\section*{Grading}
-Your implementation of this program is worth 100 points. For an extra 10 bonus points,
-you may implement a binary search method in place of the default selection sort (rename your function in this case)
-
+This bonus is worth 20 points on your lowest lab grade.
 
 \section*{Deliverables}
-Hard copy of the source code you wrote (happy.cpp). Soft copy (upload to homework upload) of
+Hard copies of the source code you wrote (multiple.py and fibonacci.py). Soft copy (upload to homework upload) of
 your source code. You may, at your discretion, use Git for version control -- it is not required.
 
 % Comic at the bottom
-%\begin{figure}[ht!]
-%\centering
-%\includegraphics[width=6in]{potential.png}
-%\caption*{The bunch of disadvantaged kids I was tutoring became too good at writing, and their essays were forcing me to confront painful existential questions, so I started trying to turn them on to drugs and crime instead.}
-%\end{figure}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=6in]{python.png}
+\caption*{"I wrote 20 short programs in Python yesterday.  It was wonderful.  Perl, I'm leaving you."}
+\end{figure}
 \end{document}
